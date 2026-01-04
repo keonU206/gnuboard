@@ -1,0 +1,172 @@
+/* ===== 제품소개 위젯 ===== */
+.kw-product {
+  padding: 70px 0 80px;
+  background: #fff;
+}
+
+.kw-product__inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kw-product__head {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.kw-product__kicker {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  font-weight: 700;
+  color: #1f3c88;
+}
+
+.kw-product__title {
+  margin-top: 8px;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #111;
+}
+
+/* (선택) 좌측 도트 rail */
+.kw-product__rail {
+  position: absolute;
+  left: -28px;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.kw-product__rail .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d7d7d7;
+}
+.kw-product__rail .dot.active {
+  width: 10px;
+  height: 10px;
+  background: #bdbdbd;
+  outline: 6px solid #efefef;
+}
+
+/* grid */
+.kw-product__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+/* card */
+.kw-card {
+  position: relative;
+  display: grid;
+
+  /* ✅ 7:3 비율 */
+  grid-template-columns: 7fr 3fr;
+
+  align-items: stretch;
+  min-height: 210px;
+  border-radius: 18px;
+  background: #fff;
+
+  /* ✅ 미세한 그림자(시안 느낌) */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 12px 28px rgba(17, 24, 39, 0.06);
+
+  overflow: hidden;
+  border: 2px solid transparent;
+  text-decoration: none;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.kw-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06), 0 16px 34px rgba(17, 24, 39, 0.08);
+}
+
+/* ✅ hover될 때마다 테두리 파란색 */
+.kw-card:hover {
+  border-color: #1f3c88;
+}
+
+/* 접근성(키보드 탭) */
+.kw-card:focus,
+.kw-card:focus-visible {
+  border-color: #1f3c88;
+  outline: none;
+}
+
+.kw-card__content {
+  padding: 34px 26px 32px 34px;
+  z-index: 2;
+}
+
+.kw-card__title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 12px;
+}
+
+.kw-card__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #6a6a6a;
+
+  /* ✅ 텍스트 영역이 넉넉해지지만, 너무 길면 보기 안 좋아서 제한 */
+  max-width: 520px;
+}
+
+/* media area (오른쪽 이미지) */
+.kw-card__media {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05);
+}
+
+/* ✅ 텍스트 쪽이 더 밝게, 이미지 쪽은 자연스럽게 */
+.kw-card__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.55) 45%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .kw-product__rail {
+    display: none;
+  }
+  .kw-product__title {
+    font-size: 28px;
+  }
+
+  .kw-product__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .kw-card {
+    grid-template-columns: 1fr;
+  }
+
+  .kw-card__media {
+    height: 180px;
+  }
+
+  .kw-card__content {
+    padding: 26px 22px;
+  }
+}

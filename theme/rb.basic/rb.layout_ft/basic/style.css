@@ -1,0 +1,134 @@
+/* ===== Footer (시안 스타일) ===== */
+.kw-footer {
+  background: #222; /* 시안처럼 진한 회색 */
+  color: #e9e9e9;
+}
+
+.kw-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 34px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+}
+
+.kw-footer__brand {
+  margin-bottom: 10px;
+}
+
+/* 텍스트 로고 */
+.kw-footer__brandText {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.kw-footer__mark {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #fff;
+  transform: translateY(2px);
+}
+
+.kw-footer__brandName {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.kw-footer__brandSub {
+  margin-left: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+}
+
+.kw-footer__logo {
+  max-height: 42px;
+  display: block;
+}
+
+/* 회사정보 */
+.kw-footer__meta {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.kw-footer__meta .sep {
+  margin: 0 8px;
+  opacity: 0.55;
+}
+
+.kw-footer__link {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+}
+.kw-footer__link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* 정책/카피 */
+.kw-footer__policy {
+  margin-top: 14px;
+}
+
+.kw-footer__policyLink {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.kw-footer__policyLink:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.kw-footer__copy {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* 우측 대표번호 */
+.kw-footer__right {
+  text-align: right;
+  padding-top: 4px;
+}
+
+.kw-footer__phoneLabel {
+  font-size: 16px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+}
+
+.kw-footer__phoneNumber {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+/* 모바일 */
+@media (max-width: 900px) {
+  .kw-footer__inner {
+    grid-template-columns: 1fr;
+  }
+  .kw-footer__right {
+    text-align: left;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 16px;
+  }
+}

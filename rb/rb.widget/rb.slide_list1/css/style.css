@@ -1,0 +1,107 @@
+.rb_wz_swap1_wrap {
+    padding: 0px 70px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.rb_wz_swap1_wrap .opacity-50 {
+    opacity: .5;
+}
+
+.rb_wz_swap1_wrap .rb_wz_swap1_con {
+    margin-top: 20px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #f0f5f9;
+    word-break: keep-all;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    line-height: 140%;
+    min-height: 170px;
+}
+
+.rb_wz_swap1_wrap .rb_swiper .rb_swiper_paging_btn {
+    right: 0px;
+    left: 0px;
+    top: 33%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 99
+}
+
+.rb_wz_swap1_wrap .swap1_btn_wrap {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.rb_wz_swap1_wrap .swap1_btn_wrap button {
+    height: 75px;
+    font-size: 20px;
+    color: #fff;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 60px;
+    border: 0px;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    transform: translateZ(0) scale(1);
+    will-change: transform;
+}
+
+.rb_wz_swap1_wrap .swap1_btn_wrap button:hover,
+.rb_wz_swap1_wrap .swap1_btn_wrap button:focus-visible {
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+}
+
+.rb_wz_swap1_wrap .swap1_btn_wrap button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .10);
+}
+
+.rb_wz_swap1_wrap .rb_swiper .rb_swiper_paging_btn button {
+    width: 40px !important;
+    height: 40px !important;
+    border: 0px;
+    border-radius: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+}
+
+.rb_wz_swap1_wrap .rb_swiper .rb_swiper_paging_btn button img {
+    width: 10px;
+}
+
+.rb_wz_swap1_wrap .rb_swiper .rb-swiper-next {
+    left: auto !important;
+    right: 0px !important;
+    top: auto !important;
+    transform: none !important;
+    position: absolute;
+}
+
+.rb_wz_swap1_wrap .rb_swiper .rb-swiper-prev {
+    right: auto !important;
+    left: 0px !important;
+    top: auto !important;
+    transform: none !important;
+    position: absolute;
+}
+
+@media all and (max-width:1024px) {
+    .rb_wz_swap1_wrap {
+        padding-top: 35px;
+    }
+
+    .rb_section_1 .rb_section_title h2 {
+        font-size: 26px !important;
+    }
+
+    .rb_section_1 .rb_section_title h6 {
+        font-size: 18px !important;
+    }
+
+    .rb_wz_swap1_wrap {
+        padding: 0px 0px;
+    }
+}
