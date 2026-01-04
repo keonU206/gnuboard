@@ -143,8 +143,10 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_THEME_URL.'/rb.layout_hd/'.$rb
                 <!-- 퀵메뉴 { -->
                 <ul class="snb_wrap">
                     <li class="qm_wrap">
-                      
-                        <?php if($is_member) { ?>
+                        
+
+                        <!-- 쪽지 및 스크랩 네비바 -->
+                        <!-- <?php if($is_member) { ?>
                         
                         <a href="<?php echo G5_BBS_URL ?>/scrap.php" target="_blank" id="ol_after_scrap" class="win_scrap" alt="스크랩">
                             
@@ -163,7 +165,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_THEME_URL.'/rb.layout_hd/'.$rb
                             <span class="font-H"><?php echo $memo_not_read ?></span>
                             <?php } ?>
                         </a>
-                        <?php } ?>
+                        <?php } ?> -->
                        
                         <button type="button" alt="검색" id="search_top_btn">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -278,12 +280,16 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_THEME_URL.'/rb.layout_hd/'.$rb
                         
                         <div class="cb"></div>
                     </li>
-                    <li class="member_info_wrap">
+
+                    <!-- 유저 정보 -->
+                    <!-- <li class="member_info_wrap">
                         <?php if($is_member) { ?>
                         <a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php" class="font-B notranslate"><?php echo $member['mb_nick'] ?></a>　<a href="<?php echo G5_BBS_URL; ?>/point.php" target="_blank" class="win_point"><span class="font-H"><?php echo number_format($member['mb_point']); ?> P</span></a>
                         <?php } ?>
-                    </li>
-                    <li class="my_btn_wrap">
+                    </li> -->
+
+                    <!-- 유저부분 -->
+                    <!-- <li class="my_btn_wrap">
                         <?php if($is_member) { ?>
                             <button type="button" alt="로그아웃" class="btn_round" onclick="location.href='<?php echo G5_BBS_URL ?>/logout.php';">로그아웃</button>
                             <button type="button" alt="마이페이지" class="btn_round arr_bg font-B" onclick="location.href='<?php echo G5_URL; ?>/rb/home.php?mb_id=<?php echo $member['mb_id']; ?>';">My</button>
@@ -291,7 +297,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_THEME_URL.'/rb.layout_hd/'.$rb
                             <button type="button" alt="로그인" class="btn_round"  onclick="location.href='<?php echo G5_BBS_URL ?>/login.php?url=<?php echo urlencode(getCurrentUrl()); ?>';">로그인</button>
                             <button type="button" alt="회원가입" class="btn_round arr_bg font-B" onclick="location.href='<?php echo G5_BBS_URL ?>/register.php';">회원가입</button>
                         <?php } ?>
-                    </li>
+                    </li> -->
                     
                     <div class="cb"></li>
                 </ul>

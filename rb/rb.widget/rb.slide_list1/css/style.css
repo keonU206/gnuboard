@@ -1,107 +1,169 @@
+/* =========================
+   MAIN HERO SWIPER (SCHEMTEC STYLE)
+   image: ../img/mainintro.jpg
+========================= */
+
+/* 위젯 전체를 메인 비주얼 높이로 */
 .rb_wz_swap1_wrap {
-    padding: 0px 70px;
-    position: relative;
-    padding-bottom: 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 풀스크린 */
+  min-height: 640px; /* 너무 작아지는 것 방지 */
+  overflow: hidden;
 }
 
-.rb_wz_swap1_wrap .opacity-50 {
-    opacity: .5;
+/* 스와이퍼 높이 */
+.rb_wz_swap1_wrap .rb_swiper,
+.rb_wz_swap1_wrap .rb_swiper_inner,
+.rb_wz_swap1_wrap .swiper-wrapper {
+  height: 100%;
 }
 
-.rb_wz_swap1_wrap .rb_wz_swap1_con {
-    margin-top: 20px;
-    padding: 40px;
-    border-radius: 20px;
-    background-color: #f0f5f9;
-    word-break: keep-all;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 16px;
-    line-height: 140%;
-    min-height: 170px;
+/* 각 슬라이드 */
+.rb_wz_swap1_wrap .rb_swiper_list.hero_slide {
+  position: relative;
+  height: 100%;
+  display: block;
+  color: #fff;
 }
 
-.rb_wz_swap1_wrap .rb_swiper .rb_swiper_paging_btn {
-    right: 0px;
-    left: 0px;
-    top: 33%;
-    transform: translateY(-50%);
-    width: 100%;
-    z-index: 99
+/* 공통 배경: 캡처처럼 오른쪽 건물 + 왼쪽 여백 */
+.rb_wz_swap1_wrap .rb_swiper_list.hero_slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/mainintro.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
 }
 
+/* 왼쪽 그라데이션 오버레이(텍스트 가독성) */
+.rb_wz_swap1_wrap .rb_swiper_list.hero_slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 25, 55, 0.75) 0%,
+    rgba(6, 25, 55, 0.55) 35%,
+    rgba(6, 25, 55, 0.15) 65%,
+    rgba(6, 25, 55, 0) 100%
+  );
+}
+
+/* 슬라이드 내부 텍스트 영역 */
+.rb_wz_swap1_wrap .hero_inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center; /* 캡처처럼 중앙쯤 */
+  padding-left: clamp(24px, 6vw, 96px);
+  padding-right: clamp(24px, 6vw, 96px);
+}
+
+/* 좌측 텍스트 박스 */
+.rb_wz_swap1_wrap .hero_left {
+  max-width: 520px;
+}
+
+/* 타이틀 / 서브텍스트 */
+.rb_wz_swap1_wrap .hero_title {
+  font-size: clamp(34px, 4.2vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  margin: 0 0 14px 0;
+}
+
+.rb_wz_swap1_wrap .hero_sub {
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.6;
+  opacity: 0.92;
+  margin: 0;
+}
+
+/* 기존 위젯 문구 영역은 메인비주얼에선 숨김 처리 */
+.rb_wz_swap1_wrap .rb_wz_swap1_con,
+.rb_wz_swap1_wrap .rb_swiper_list > ul {
+  display: none !important;
+}
+
+/* 하단 좌측 화살표(캡처 느낌) */
+.rb_wz_swap1_wrap .rb_swiper_paging_btn {
+  position: absolute;
+  left: clamp(18px, 4vw, 64px);
+  bottom: clamp(18px, 6vh, 70px);
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rb_wz_swap1_wrap .rb_swiper_paging_btn button {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.rb_wz_swap1_wrap .rb_swiper_paging_btn button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.rb_wz_swap1_wrap .rb_swiper_paging_btn button img {
+  filter: brightness(0) invert(1); /* 흰색처럼 */
+  opacity: 0.9;
+}
+
+/* 좌측 세로 도트(스와이퍼 pagination이 있다면 그걸 스타일링) */
+.rb_wz_swap1_wrap .swiper-pagination {
+  position: absolute;
+  left: clamp(14px, 2.6vw, 48px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: auto !important;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rb_wz_swap1_wrap .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  opacity: 1;
+}
+.rb_wz_swap1_wrap .swiper-pagination-bullet-active {
+  width: 28px; /* 캡처처럼 길쭉한 느낌 */
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* 하단 버튼(리빌더 사용해보기)은 메인비주얼에선 숨기거나 우측 아래로 이동 가능 */
 .rb_wz_swap1_wrap .swap1_btn_wrap {
-    text-align: center;
-    margin-top: 40px;
+  display: none; /* 필요하면 block으로 바꿔서 배치 */
 }
 
-.rb_wz_swap1_wrap .swap1_btn_wrap button {
-    height: 75px;
-    font-size: 20px;
-    color: #fff;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 60px;
-    border: 0px;
-    transition: transform 180ms ease, box-shadow 180ms ease;
-    transform: translateZ(0) scale(1);
-    will-change: transform;
-}
-
-.rb_wz_swap1_wrap .swap1_btn_wrap button:hover,
-.rb_wz_swap1_wrap .swap1_btn_wrap button:focus-visible {
-    transform: scale(1.04);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
-}
-
-.rb_wz_swap1_wrap .swap1_btn_wrap button:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .10);
-}
-
-.rb_wz_swap1_wrap .rb_swiper .rb_swiper_paging_btn button {
-    width: 40px !important;
-    height: 40px !important;
-    border: 0px;
-    border-radius: 0px;
-    padding-bottom: 0px;
-    background-color: transparent;
-}
-
-.rb_wz_swap1_wrap .rb_swiper .rb_swiper_paging_btn button img {
-    width: 10px;
-}
-
-.rb_wz_swap1_wrap .rb_swiper .rb-swiper-next {
-    left: auto !important;
-    right: 0px !important;
-    top: auto !important;
-    transform: none !important;
-    position: absolute;
-}
-
-.rb_wz_swap1_wrap .rb_swiper .rb-swiper-prev {
-    right: auto !important;
-    left: 0px !important;
-    top: auto !important;
-    transform: none !important;
-    position: absolute;
-}
-
-@media all and (max-width:1024px) {
-    .rb_wz_swap1_wrap {
-        padding-top: 35px;
-    }
-
-    .rb_section_1 .rb_section_title h2 {
-        font-size: 26px !important;
-    }
-
-    .rb_section_1 .rb_section_title h6 {
-        font-size: 18px !important;
-    }
-
-    .rb_wz_swap1_wrap {
-        padding: 0px 0px;
-    }
+/* 반응형 */
+@media (max-width: 1024px) {
+  .rb_wz_swap1_wrap {
+    height: 72vh;
+    min-height: 520px;
+  }
+  .rb_wz_swap1_wrap .hero_inner {
+    align-items: flex-start;
+    padding-top: 22vh; /* 모바일에서 텍스트를 살짝 아래로 */
+  }
+  .rb_wz_swap1_wrap .rb_swiper_paging_btn {
+    bottom: 22px;
+  }
 }
